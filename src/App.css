@@ -1,0 +1,124 @@
+#app {
+    width: 700px;
+    height: 250px;
+    border: 1px solid black;
+    margin: auto;
+}
+
+#skater {
+    background-image: url("./assets/skateboard60.png");
+    width: 60px;
+    height: 60px;
+    top: 190px;
+    position: relative;
+}
+
+.ollie {
+    animation: ollie 0.3s linear;
+}
+
+@keyframes ollie {
+    0% {
+        top: 190px;
+    }
+
+    15% {
+        top: 175px;
+    }
+
+    30% {
+        top: 160px;
+    }
+
+    45% {
+        top: 120px;
+    }
+
+    50% {
+        top: 80px;
+    }
+
+    60% {
+        top: 120px;
+    }
+
+    75% {
+        top: 160px;
+    }
+
+    80% {
+        top: 175px;
+    }
+
+    100% {
+        top: 190px;
+    }
+}
+
+
+
+#rock {
+    width: 26px;
+    height: 26px;
+    position: relative;
+    top: 164px;
+    left: 674px;
+    background-image: url("./assets/rock26.png");
+}
+
+.rock {
+    animation: rock 1.5s infinite linear;
+}
+
+@keyframes rock {
+    0% {
+        left: 674px;
+    }
+
+    100% {
+        left: -12px;
+    }
+}
+
+#rock {
+    width: 26px;
+    height: 26px;
+    position: relative;
+    top: 164px;
+    left: 674px;
+    background-image: url("./assets/rock26.png");
+}
+
+.rock {
+    animation: rock 1.5s infinite linear;
+}
+
+@keyframes rock {
+    0% {
+        left: 674px;
+    }
+
+    100% {
+        left: -12px;
+    }
+}
+
+#cloud {
+    width: 48px;
+    height: 48px;
+    position: relative;
+    top: -60px;
+    left: 678px;
+    background-image: url("./assets/cloud48.png");
+    animation: cloud 6s infinite linear;
+}
+
+@keyframes cloud {
+    0% {
+        left: 674px;
+    }
+
+    100% {
+        left: -12px;
+    }
+}
