@@ -4,6 +4,10 @@
     <div id="rock"></div>
     <div id="scooter"></div>
     <div id="cloud"></div>
+
+    <!-- <div>Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div> -->
+
+
   </div>
 </template>
 
@@ -24,17 +28,19 @@ export default {
     })
 
     this.rock.classList.add('rock')
+    this.cloud.classList.add('cloud')
 
-    setInterval(() => {
-        let skateTop = parseInt(window.getComputedStyle(this.skater).getPropertyValue('top'));
-        let rockLeft = parseInt(window.getComputedStyle(this.rock).getPropertyValue('left'));
+    // setInterval(() => {
+    //     let skateTop = parseInt(window.getComputedStyle(this.skater).getPropertyValue('top'));
+    //     let rockLeft = parseInt(window.getComputedStyle(this.rock).getPropertyValue('left'));
 
-        //collision
-        if(rockLeft < 26 && rockLeft > 0 && skateTop >= 175) {
-          console.log('collision')
-          this.rock.classList.remove('rock')
-        }
-    }, 10)
+    //     //collision
+    //     if(rockLeft < 26 && rockLeft > 0 && skateTop >= 175) {
+    //       console.log('collision')
+    //       this.rock.classList.remove('rock')
+    //        this.cloud.classList.remove('cloud')
+    //     }
+    // }, 10)
   },
   methods: {
     ollie() {
@@ -54,6 +60,9 @@ export default {
     },
     rock() {
       return document.getElementById('rock')
+    },
+    cloud() {
+      return document.getElementById('cloud')
     }
   }
 };

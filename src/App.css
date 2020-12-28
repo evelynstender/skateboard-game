@@ -6,9 +6,10 @@
 }
 
 #skater {
-    background-image: url("./assets/skateboard60.png");
+    background-image: url("./assets/skater.png");
     width: 60px;
     height: 60px;
+    background-size: 60px;
     top: 190px;
     position: relative;
 }
@@ -20,77 +21,44 @@
 @keyframes ollie {
     0% {
         top: 190px;
+         background-image: url("./assets/skater-ollie.png");
     }
 
-    15% {
-        top: 175px;
-    }
 
     30% {
         top: 160px;
-    }
-
-    45% {
-        top: 120px;
+         background-image: url("./assets/skater-ollie.png");
     }
 
     50% {
-        top: 80px;
-    }
-
-    60% {
-        top: 120px;
-    }
-
-    75% {
-        top: 160px;
+        top: 60px;
+        background-image: url("./assets/skater-ollie.png");
     }
 
     80% {
         top: 175px;
+         background-image: url("./assets/skater-ollie.png");
     }
 
     100% {
         top: 190px;
+         background-image: url("./assets/skater-ollie.png");
     }
 }
 
 
-
 #rock {
+    background-size: 26px;
     width: 26px;
     height: 26px;
     position: relative;
     top: 164px;
     left: 674px;
-    background-image: url("./assets/rock26.png");
+    background-image: url("./assets/rock.png");
 }
 
 .rock {
-    animation: rock 1.5s infinite linear;
-}
-
-@keyframes rock {
-    0% {
-        left: 674px;
-    }
-
-    100% {
-        left: -12px;
-    }
-}
-
-#rock {
-    width: 26px;
-    height: 26px;
-    position: relative;
-    top: 164px;
-    left: 674px;
-    background-image: url("./assets/rock26.png");
-}
-
-.rock {
-    animation: rock 1.5s infinite linear;
+    animation: rock 2s infinite linear;
 }
 
 @keyframes rock {
@@ -106,16 +74,21 @@
 #cloud {
     width: 48px;
     height: 48px;
+    background-size: 48px;
     position: relative;
     top: -60px;
-    left: 678px;
-    background-image: url("./assets/cloud48.png");
+    left: 654px;
+    background-image: url("./assets/cloud.png");
+
+}
+
+.cloud {
     animation: cloud 6s infinite linear;
 }
 
 @keyframes cloud {
     0% {
-        left: 674px;
+        left: 654px;
     }
 
     100% {
