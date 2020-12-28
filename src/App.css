@@ -25,6 +25,7 @@
     }
 
 
+
     30% {
         top: 160px;
          background-image: url("./assets/skater-ollie.png");
@@ -94,4 +95,19 @@
     100% {
         left: -12px;
     }
+}
+
+
+.down {
+    animation: down 0.1s infinite linear;
+    transform: rotate(22deg);
+
+}
+
+
+@keyframes down {
+     0% ,100% {
+         background-image: url('./assets/skater-down.png');
+         top: 195px;
+     }
 }

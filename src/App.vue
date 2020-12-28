@@ -24,7 +24,19 @@ export default {
   },
   mounted() {
     document.addEventListener('keydown', (event) => {
-      this.ollie();
+      if(event.code === "Space" || event.code === "Enter") {
+        this.ollie();
+      }
+      if (event.code === "ArrowDown") {
+        this.skater.classList.add('down')
+      }
+
+    })
+
+    document.addEventListener('keyup', (event) => {
+      if(event.code === 'ArrowDown') {
+        this.skater.classList.remove('down')
+      }
     })
 
     this.rock.classList.add('rock')
