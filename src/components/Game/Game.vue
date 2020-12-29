@@ -17,7 +17,12 @@
         You lose! Retry!
       </div>
     </div>
-    <div class="icons">Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+    <div class="icons">
+      Icons made by
+      <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> and
+      <a href="https://www.flaticon.com/authors/vaadin" title="Vaadin">Vaadin</a> from
+      <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a>
+    </div>
   </div>
 </template>
 
@@ -166,6 +171,7 @@ export default {
       if (this.score > this.highestScore) {
         this.highestScore = this.score;
       }
+      this.score = 0;
 
       this.rock.classList.add("paused");
       this.cloud.classList.add("paused");

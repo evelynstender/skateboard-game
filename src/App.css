@@ -1,17 +1,24 @@
 .main__app {
     font-family: Roboto, sans-serif;
-    /* background-image: url('./assets/bg.jpeg');
-    background-repeat: repeat;
-    opacity: 0.2; */
     width: 100%;
     height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 
 }
 
-/* .main__app {
-    content: " ";
-    background: url('./assets/bg.jpeg') repeat;
-} */
+.main__app::after {
+  content: "";
+  background: url('./assets/bg.jpeg') repeat;
+  opacity: 0.3;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;
+}
 
 html,
 body {
@@ -20,7 +27,42 @@ body {
     width: 100%;
 }
 
+h1, h3 {
+    text-align: center;
 
-.game {
-    opacity: 1;
+}
+
+.footer {
+    background-color: black;
+    color: white;
+    height: 40px;
+    text-align: center;
+    padding-top: 20px;
+}
+
+.todo {
+    width: 200px;
+    height: 200px;
+    background-color: white;
+    border: 1px solid gray;
+    box-shadow: 2px 2px darkgray;
+    border-radius: 4px;
+    padding: 5px;
+    margin: 0 auto;
+}
+
+.ollieKey, .downKey {
+    display: flex;
+    flex-direction: row;
+    width: 100px;
+    margin: auto;
+    text-align: left;
+    padding: 10px 0;
+
+}
+
+.keyImg {
+    height: 32px;
+    width: 32px;
+    padding-left: 10px;
 }
