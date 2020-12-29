@@ -21,14 +21,12 @@
 @keyframes ollie {
     0% {
         top: 190px;
-         background-image: url("./assets/skater-ollie.png");
+        background-image: url("./assets/skater-ollie.png");
     }
-
-
 
     30% {
         top: 160px;
-         background-image: url("./assets/skater-ollie.png");
+        background-image: url("./assets/skater-ollie.png");
     }
 
     50% {
@@ -38,15 +36,14 @@
 
     80% {
         top: 175px;
-         background-image: url("./assets/skater-ollie.png");
+        background-image: url("./assets/skater-ollie.png");
     }
 
     100% {
         top: 190px;
-         background-image: url("./assets/skater-ollie.png");
+        background-image: url("./assets/skater-ollie.png");
     }
 }
-
 
 #rock {
     background-size: 26px;
@@ -77,10 +74,9 @@
     height: 48px;
     background-size: 48px;
     position: relative;
-    top: -60px;
+    top: -80px;
     left: 654px;
     background-image: url("./assets/cloud.png");
-
 }
 
 .cloud {
@@ -97,17 +93,46 @@
     }
 }
 
-
 .down {
     animation: down 0.1s infinite linear;
     transform: rotate(22deg);
-
 }
 
-
 @keyframes down {
-     0% ,100% {
-         background-image: url('./assets/skater-down.png');
-         top: 195px;
-     }
+    0%,
+    100% {
+        background-image: url("./assets/skater-down.png");
+        top: 198px;
+        height: 56px;
+        width: 56px;
+        background-size: 56px;
+    }
+}
+
+#scooter {
+    width: 48px;
+    height: 48px;
+    background-size: 48px;
+    position: relative;
+    top: 56px;
+    left: 654px;
+    background-image: url("./assets/scooter.png");
+}
+
+.scooter {
+    animation: scooter 2s infinite linear;
+}
+
+@keyframes scooter {
+    0% {
+        left: 674px;
+        top: 56px;
+        transform: scaleX(-1);
+    }
+
+    100% {
+        top: 56px;
+        left: -12px;
+        transform: scaleX(-1);
+    }
 }
