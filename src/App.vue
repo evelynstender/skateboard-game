@@ -2,6 +2,7 @@
   <div id="app">
     <Game />
     <!-- <div>Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> and <a href="https://www.flaticon.com/authors/good-ware" title="Good Ware">Good Ware</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div> -->
+    <!-- <a href='https://www.freepik.com/vectors/background'>Background vector created by brgfx - www.freepik.com</a> -->
   </div>
 </template>
 

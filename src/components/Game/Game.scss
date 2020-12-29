@@ -1,0 +1,194 @@
+#game {
+    width: 700px;
+    height: 250px;
+    border: 1px solid black;
+    margin: auto;
+}
+
+.gameOpacity {
+    opacity: 0.5;
+}
+
+#skater {
+    background-image: url("../../assets/skater.png");
+    width: 60px;
+    height: 60px;
+    background-size: 60px;
+    top: 190px;
+    position: relative;
+}
+
+.ollie {
+    animation: ollie 0.5s linear;
+}
+
+@keyframes ollie {
+    0% {
+        top: 190px;
+        background-image: url("../../assets/skater-ollie.png");
+        display: none;
+    }
+
+    30% {
+        top: 160px;
+        background-image: url("../../assets/skater-ollie.png");
+    }
+
+    50% {
+        top: 80px;
+        background-image: url("../../assets/skater-ollie.png");
+    }
+
+    80% {
+        top: 175px;
+        background-image: url("../../assets/skater-ollie.png");
+    }
+
+    100% {
+        top: 190px;
+        background-image: url("../../assets/skater-ollie.png");
+        display: none;
+    }
+}
+
+#rock {
+    background-size: 26px;
+    width: 26px;
+    height: 26px;
+    position: relative;
+    top: 164px;
+    left: 674px;
+    background-image: url("../../assets/rock.png");
+}
+
+.rock {
+    animation: rock 2s infinite linear;
+    animation-delay: 0.1s;
+}
+
+@keyframes rock {
+    0% {
+        left: 675px;
+    }
+
+    100% {
+        left: -12px;
+    }
+}
+
+#cloud {
+    width: 48px;
+    height: 48px;
+    background-size: 48px;
+    position: relative;
+    top: -80px;
+    left: 654px;
+    background-image: url("../../assets/cloud.png");
+}
+
+.cloud {
+    animation: cloud 6s infinite linear;
+}
+
+@keyframes cloud {
+    0% {
+        left: 654px;
+    }
+
+    100% {
+        left: -12px;
+    }
+}
+
+.down {
+    animation: down 0.1s infinite linear;
+    transform: rotate(22deg);
+}
+
+@keyframes down {
+    0%,
+    100% {
+        background-image: url("../../assets/skater-down.png");
+        top: 198px;
+        height: 60px;
+        width: 60px;
+        background-size: 60px;
+    }
+}
+
+#scooter {
+    width: 48px;
+    height: 48px;
+    background-size: 48px;
+    position: relative;
+    top: 56px;
+    left: 654px;
+    background-image: url("../../assets/scooter.png");
+    transform: scaleX(-1);
+}
+
+.scooter {
+    animation: scooter 2s infinite linear;
+    animation-delay: 7s;
+}
+
+@keyframes scooter {
+    0% {
+        left: 674px;
+        top: 56px;
+        transform: scaleX(-1);
+    }
+
+    100% {
+        top: 56px;
+        left: -12px;
+        transform: scaleX(-1);
+    }
+}
+
+.paused {
+    animation-play-state: paused;
+}
+
+.startRetryButton {
+    position: relative;
+    top: -120px;
+    left: 300px;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid gray;
+    width: 100px;
+    text-align: center;
+    border-radius: 4px;
+    box-shadow: 2px 2px darkgray;
+    padding-bottom: 10px;
+    background-color: white;
+}
+
+.start {
+    padding-top: 10px;
+    top: -100px;
+}
+
+.startRetryButton:hover {
+    background-color: lightgray;
+    cursor: pointer;
+}
+
+.startRetryButton:active {
+    background-color: darkgray;
+}
+
+.retryImg {
+    width: 42px;
+    height: 42px;
+    justify-self: center;
+    align-self: center;
+    margin-bottom: 5px;
+    margin-top: 10px;
+}
+$randomNumber: random(5);
+
+.invisible {
+    visibility: hidden;
+}
