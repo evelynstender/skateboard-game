@@ -1,20 +1,23 @@
 <template>
-  <div id="game">
+  <div class="playground__wrapper">
     <div class="score__wrapper">
       <div class="score">HI: {{ highestScoreGame }}</div>
       <div class="score">Score: {{ scoreGame }}</div>
     </div>
-    <div id="skater" class="gameOpacity"></div>
-    <div id="rock" class="paused gameOpacity"></div>
-    <div id="scooter" class="paused gameOpacity invisible"></div>
-    <div id="cloud" class="paused gameOpacity"></div>
-    <div v-if="firstTime" class="startRetryButton start" @click="begin">
-      Start now!
+    <div id="game">
+      <div id="skater" class="gameOpacity"></div>
+      <div id="rock" class="paused gameOpacity"></div>
+      <div id="scooter" class="paused gameOpacity invisible"></div>
+      <div id="cloud" class="paused gameOpacity"></div>
+      <div v-if="firstTime" class="startRetryButton start" @click="begin">
+        Start now!
+      </div>
+      <div v-else-if="collidedRock || collidedScooter" class="startRetryButton" @click="retry">
+        <img class="retryImg" src="../../assets/retry.png" />
+        You lose! Retry!
+      </div>
     </div>
-    <div v-else-if="collidedRock || collidedScooter" class="startRetryButton" @click="retry">
-      <img class="retryImg" src="../../assets/retry.png" />
-      You lose! Retry!
-    </div>
+    <div class="icons">Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
   </div>
 </template>
 
@@ -184,11 +187,9 @@ export default {
       return scoreString;
     },
 
-    stopPoints() {},
     startScore() {
       this.scoreInterval = setInterval(() => {
         this.score = this.score + 1;
-        console.log(this.score);
       }, 50);
     }
   },
