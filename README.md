@@ -1,5 +1,9 @@
 # skateboard-game
 
+Play on https://skateboard-game.vercel.app/
+
+![The game](./game.jpeg)
+
 ## Project setup
 ```
 yarn install
@@ -7,23 +11,15 @@ yarn install
 
 ### Compiles and hot-reloads for development
 ```
-yarn run dev
+yarn dev
 ```
 
 ### Compiles and minifies for production
 ```
-yarn run build
-```
-
-### Run your unit tests
-```
-yarn run test:unit
+yarn build
 ```
 
 ### Lints and fixes files
 ```
 yarn run lint
 ```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
