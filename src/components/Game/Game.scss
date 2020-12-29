@@ -192,3 +192,16 @@ $randomNumber: random(5);
 .invisible {
     visibility: hidden;
 }
+
+
+.score__wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    // position: fixed;
+
+}
+
+.score {
+    margin-right: 5px;
+}

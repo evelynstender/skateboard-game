@@ -1,5 +1,9 @@
 <template>
   <div id="game">
+    <div class="score__wrapper">
+      <div class="score">HI: {{ highestScoreGame }}</div>
+      <div class="score">Score: {{ scoreGame }}</div>
+    </div>
     <div id="skater" class="gameOpacity"></div>
     <div id="rock" class="paused gameOpacity"></div>
     <div id="scooter" class="paused gameOpacity invisible"></div>
@@ -22,7 +26,11 @@ export default {
       collidedRock: false,
       collidedScooter: false,
       skaterDown: false,
-      firstTime: true
+      firstTime: true,
+      highestScore: 0,
+      score: 0,
+      isGameRunning: false,
+      scoreInterval: null
     };
   },
   mounted() {
@@ -120,6 +128,8 @@ export default {
     startGame() {
       this.addListeners();
 
+      this.startScore();
+
       this.scooter.classList.add("invisible");
       this.scooter.classList.add("paused");
 
@@ -148,6 +158,12 @@ export default {
     pause() {
       this.removeListeners();
 
+      clearInterval(this.scoreInterval);
+
+      if (this.score > this.highestScore) {
+        this.highestScore = this.score;
+      }
+
       this.rock.classList.add("paused");
       this.cloud.classList.add("paused");
       this.scooter.classList.add("paused");
@@ -157,6 +173,23 @@ export default {
       this.rock.classList.add("gameOpacity");
       this.cloud.classList.add("gameOpacity");
       this.scooter.classList.add("gameOpacity");
+    },
+    scoreLeftZeros(score) {
+      let scoreString = String(score);
+
+      while (scoreString.length < 5) {
+        scoreString = "0" + scoreString;
+      }
+
+      return scoreString;
+    },
+
+    stopPoints() {},
+    startScore() {
+      this.scoreInterval = setInterval(() => {
+        this.score = this.score + 1;
+        console.log(this.score);
+      }, 50);
     }
   },
   computed: {
@@ -171,6 +204,12 @@ export default {
     },
     scooter() {
       return document.getElementById("scooter");
+    },
+    scoreGame() {
+      return this.scoreLeftZeros(this.score);
+    },
+    highestScoreGame() {
+      return this.scoreLeftZeros(this.highestScore);
     }
   }
 };
