@@ -1,5 +1,6 @@
 #game {
-    width: 700px;
+    width: 100%;
+    max-width: 700px;
     height: 250px;
     border: 1px solid black;
     margin: auto;
@@ -58,7 +59,7 @@
     height: 26px;
     position: relative;
     top: 164px;
-    left: 674px;
+    left: calc(100% - 26px);
     background-image: url("../../assets/rock.png");
 }
 
@@ -123,7 +124,7 @@
     background-size: 48px;
     position: relative;
     top: 56px;
-    left: 654px;
+    left: calc(100% - 48px);
     background-image: url("../../assets/scooter.png");
     transform: scaleX(-1);
 }
@@ -154,7 +155,6 @@
 .startRetryButton {
     position: relative;
     top: -120px;
-    left: 300px;
     display: flex;
     flex-direction: column;
     border: 1px solid gray;
@@ -164,6 +164,7 @@
     box-shadow: 2px 2px darkgray;
     padding-bottom: 10px;
     background-color: white;
+    margin: 0 auto;
 }
 
 .start {
@@ -196,10 +197,11 @@ $randomNumber: random(5);
 
 
 .score__wrapper {
+    width: 100%;
+    max-width: 700px;
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-    width: 700px;
     border: 1px solid black;
     border-bottom: 0;
     background-color: white;
