@@ -17,6 +17,10 @@
         You lose! Retry!
       </div>
     </div>
+    <div class="controls">
+      <button name="up-button" type="button">UP</button>
+      <button name="down-button" type="button">DOWN</button>
+    </div>
     <div class="icons">
       Icons made by
       <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> and
@@ -75,15 +79,32 @@ export default {
         this.skaterDown = false;
       }
     },
+    buttonDown() {
+      this.skater.classList.add("down");
+      this.skaterDown = true;
+    },
+    buttonUp() {
+      this.ollie();
+      this.skater.classList.remove("down");
+      this.skaterDown = false;
+    },
     addListeners() {
       document.addEventListener("keydown", this.keyDown);
 
       document.addEventListener("keyup", this.keyUp);
+
+      document.querySelector("button[name='up-button']").addEventListener("click", this.buttonUp);
+
+      document.querySelector("button[name='down-button']").addEventListener("click", this.buttonDown);
     },
     removeListeners() {
       document.removeEventListener("keydown", this.keyDown);
 
       document.removeEventListener("keyup", this.keyUp);
+
+      document.querySelector("button[name='up-button']").removeEventListener("click", this.buttonUp);
+
+      document.querySelector("button[name='down-button']").removeEventListener("click", this.buttonDown);
     },
     addCollision() {
       setInterval(() => {
