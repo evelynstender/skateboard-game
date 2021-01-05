@@ -27,13 +27,6 @@
 </template>
 
 <script>
-const deviceAgentsRegex = new RegExp(
-  /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/,
-  "i"
-);
-
-const runningOnMobile = deviceAgentsRegex.test(navigator.userAgent);
-
 export default {
   name: "Game",
   data() {
@@ -46,7 +39,10 @@ export default {
       score: 0,
       isGameRunning: false,
       scoreInterval: null,
-      runningOnMobile
+      runningOnMobile: new RegExp(
+        /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/,
+        "i"
+      ).test(navigator.userAgent)
     };
   },
   mounted() {
