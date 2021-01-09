@@ -38,7 +38,11 @@ export default {
       highestScore: 0,
       score: 0,
       isGameRunning: false,
-      scoreInterval: null
+      scoreInterval: null,
+      runningOnMobile: new RegExp(
+        /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/,
+        "i"
+      ).test(navigator.userAgent)
     };
   },
   mounted() {
@@ -75,15 +79,22 @@ export default {
         this.skaterDown = false;
       }
     },
+    touch() {
+      this.ollie();
+    },
     addListeners() {
       document.addEventListener("keydown", this.keyDown);
 
       document.addEventListener("keyup", this.keyUp);
+
+      document.getElementById("game").addEventListener("touchstart", this.touch);
     },
     removeListeners() {
       document.removeEventListener("keydown", this.keyDown);
 
       document.removeEventListener("keyup", this.keyUp);
+
+      document.getElementById("game").removeEventListener("touchstart", this.touch);
     },
     addCollision() {
       setInterval(() => {
@@ -157,9 +168,9 @@ export default {
 
       this.rock.classList.add("rock");
       this.cloud.classList.add("cloud");
-      this.scooter.classList.add("scooter");
+      !this.runningOnMobile && this.scooter.classList.add("scooter");
 
-      setTimeout(() => {
+      !this.runningOnMobile && setTimeout(() => {
         this.scooter.classList.remove("invisible");
       }, 6900);
     },
